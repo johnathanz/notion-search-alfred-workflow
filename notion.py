@@ -12,6 +12,19 @@ import unicodedata
 from payload import Payload
 from searchresult import SearchResult
 
+# Get query from Alfred
+alfredQuery = str(sys.argv[1])
+unicodeAlfredQuery = unicodedata.normalize('NFC', alfredQuery.decode('utf-8', 'ignore'))
+
+searchType = str(sys.argv[2])
+unicodeAlfredQuery = unicodedata.normalize('NFC', alfredQuery.decode('utf-8', 'ignore'))
+
+# isNavigableOnly derived from passed in system param
+if (searchType == "TITLE"):
+    isNavigableOnly = True
+else:
+    isNavigableOnly = False
+
 # config
 notionSpaceId = os.environ['notionSpaceId']
 cookie = os.environ['cookie']
@@ -23,12 +36,7 @@ if (useDesktopClient == 'true') | (useDesktopClient == 'True') | (useDesktopClie
 else:
     useDesktopClient = False
 
-# get isNavigableOnly env variable and convert to boolean for use later, default to true
-isNavigableOnly = os.environ['isNavigableOnly']
-if (isNavigableOnly == 'false') | (isNavigableOnly == 'False') | (isNavigableOnly == 'FALSE'):
-    isNavigableOnly = False
-else:
-    isNavigableOnly = True
+
 
 # get enableIcons env variable and convert to boolean for use later, default to true
 enableIcons = os.environ['enableIcons']
@@ -36,6 +44,8 @@ if (enableIcons == 'false') | (enableIcons == 'False') | (enableIcons == 'FALSE'
     enableIcons = False
 else:
     enableIcons = True
+
+
 
 
 def buildnotionsearchquerydata():
@@ -146,10 +156,6 @@ def geticonpath(searchresultobjectid, notionicon):
 
     return iconpath
 
-
-# Get query from Alfred
-alfredQuery = str(sys.argv[1])
-unicodeAlfredQuery = unicodedata.normalize('NFC', alfredQuery.decode('utf-8', 'ignore'))
 
 # Call Notion
 

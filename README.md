@@ -5,6 +5,10 @@ Simply type your keyword into Alfred (default: ns) to see instant search results
 
 ** Comes with pre-configured support for [OneUpdater](https://github.com/vitorgalvao/alfred-workflows/tree/master/OneUpdater) for automatic version updates **
 
+## Usage
+
+* **ns** - Search Notion by Note Title
+* **nt** - Search Notion by Text (will search anything not in the left hand navigation panel)
 
 ![img](https://github.com/wrjlewis/notion-search-alfred-workflow/blob/31d36ee9e75c343045f2a1f313b03373669a7730/notion-demo.gif)
 
@@ -58,7 +62,7 @@ In the Alfred worfklow in the upper right corner click the `[x]` icon and add th
 - If you experience performance issues or slow searches, you may wish to set `enableIcons` to false. This changes the search results design so icons are in line with the title, it also disables the downloading of any Notion custom icons that you come across whilst searching.
 
 ## Download:
-https://github.com/wrjlewis/notion-search-alfred-workflow/releases/latest/download/Notion.Search.alfredworkflow
+https://github.com/johnathanz/notion-search-alfred-workflow/releases/latest/download/Notion.Search.alfredworkflow
 
 ## Forum topics:
 https://www.alfredforum.com/topic/14451-notionso-instant-search-workflow/
